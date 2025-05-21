@@ -1,0 +1,19 @@
+---
+title: "Homework Submission Code"
+output: html_document
+date: "2025-05-21"
+---
+
+Link to repository: https://github.com/meholtam/ENVS-193DS_homework-03
+
+
+```{r setup}
+install.packages("tidyverse")
+read.csv("tidyverse")
+read.csv("here")
+read.csv("gt")
+read.csv("janitor")
+```
+
+Problem 1: Personal Data
+
