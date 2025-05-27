@@ -17,3 +17,5 @@ read.csv("janitor")
 
 Problem 1: Personal Data
 
+I am calculating the mean number of steps I took each day to compare average step count between weekdays. I believe I walk the most on Wednesdays, because I have classes to walk to but also free time to work out and go on walks as I do not have work, so I am curious if my data reflects this. 
+
