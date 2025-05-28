@@ -98,4 +98,10 @@ The figure I included in Part A clearly represents the statistics of the project
 
 c. Aesthetic Clarity
 
-The authors handled visual clutter quite well in the figure included. The graph has a high data-ink ratio because almost all of the visual elements of the graph, including the line, labels, and axes, help to directly display the data. There are minimal additional elements such as unnecessary borders or coloring.
+The authors handled visual clutter quite well in the figure included. The graph has a high data-ink ratio because almost all of the visual elements of the graph, including the line, labels, and axes, help to directly display the data. There are minimal additional elements such as unnecessary borders or coloring. However, the grid lines are quite thick, which takes away a bit of aesthetic clarity.
+
+d. Recommendations
+
+To make this figure better, I would remove the shadow effect on the data points and make the grid lines less thick. This will improve the data-ink ratio and visual clarity of the figure. The trend line is also overly thick which can make trend lines less clear. I would make the trend line a bit lighter while still keeping it dark enough that viewers can understand the trend. 
+
+
