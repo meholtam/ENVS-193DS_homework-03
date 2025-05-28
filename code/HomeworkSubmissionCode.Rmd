@@ -1,7 +1,6 @@
 ---
 title: "Homework Submission Code"
 output: html_document
-date: "2025-05-21"
 ---
 
 Link to repository: https://github.com/meholtam/ENVS-193DS_homework-03
@@ -39,7 +38,7 @@ ggplot(data = my_data, # using the data frame my_data
   stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "red") + # Add mean points
   labs(x = "Day of the Week", # relabeling the x-axis
        y = "Steps", # and the y-axis 
-       title = "Step Count Patterns Across the Week"), + # adding a title 
+       title = "Step Count Patterns Across the Week") + # adding a title 
 
   theme_minimal() # changing the theme from default
 ```
@@ -77,11 +76,19 @@ a.
 For my personal data, an example of affective visualization that I could use would be a week calendar. On this calendar, each day of the week would display the mean number of steps I take on average during that day of the week. The day of the week with the largest number of steps would be a very dark color, where the day of the week with the least amount of steps would be a light color. The entire calendar would be a gradient displaying most amount of steps to least amount of steps. This would create an interesting and easy-to-follow representation of how each day of the week’s average step count differs. 
 
 b. Sketch of Idea
+![Sketch](images/sketchimage.jpg)
 
 c. Draft of Visualization
+![Draft](images/draft.jpg)
 
 d. Artist Statement
 
 My piece is a week calendar displaying the average number of steps I take depending on the day of the week. The darker the color of the box, the more steps I take. Clearly, Friday had the greatest average number of steps, as the color of the box is the darkest, while Monday had the least average number of steps as the color of the box is the lightest. In creating this visualization, I was influenced by Giorgia Lupi and Steanie Posavec’s “Dear Data” project because of their use of everyday objects to represent their data. They made a postcard have significance to their project, while I am allowing the everyday object of a calendar to be significant to my project. I was also very inspired by their use of color and wanted to incorporate that into my project. My work is in digital form. I used Canva to create a week calendar and colored each day of the week using the software on this website. In R studio, I took my step count data and found the average amount of steps I took per day of the week. These were the numbers that I used to fill in my calendar. 
 
+Problem 3: Statistical Critique
+
+a. Revisit and Summarize 
+The statistical test the authors are using to address their main research question is an ANOVA. The predictor variable is the nest protection strategy used (anti-predator meshing or lethal fox control). The response variable was the percentage of turtle nests breached by the European red fox. The ANOVA test is comparing the mean breach rates of nests when the anti-predator meshing and lethal fox control methods are used versus when only anti-predator meshing is used. 
+
+![Graph](images/graph.jpg)
 
