@@ -6,6 +6,7 @@ date: "2025-05-21"
 
 Link to repository: https://github.com/meholtam/ENVS-193DS_homework-03
 
+Problem 1: Personal Data
 
 ```{r set up, message=FALSE, warning=FALSE}
 #making sure no messages show when loading in packages
@@ -68,3 +69,9 @@ mean_table %>%
     title = "Mean Steps Per Day of the Week"
   )
 ```
+
+
+Problem 2: Affective Visualization 
+
+a. 
+For my personal data, an example of affective visualization that I could use would be a week calendar. On this calendar, each day of the week would display the mean number of steps I take on average during that day of the week. The day of the week with the largest number of steps would be a very dark color, where the day of the week with the least amount of steps would be a light color. The entire calendar would be a gradient displaying most amount of steps to least amount of steps. This would create an interesting and easy-to-follow representation of how each day of the week’s average step count differs. 
