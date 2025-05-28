@@ -7,15 +7,36 @@ date: "2025-05-21"
 Link to repository: https://github.com/meholtam/ENVS-193DS_homework-03
 
 
-```{r setup}
-install.packages("tidyverse")
-read.csv("tidyverse")
-read.csv("here")
-read.csv("gt")
-read.csv("janitor")
+```{r set up, message=FALSE, warning=FALSE}
+#making sure no messages show when loading in packages
+library(tidyverse)
+library(here)
+library(gt)
+library(ggplot2)
+library(readxl)
 ```
 
 Problem 1: Personal Data
 
+a. Data summarizing
 I am calculating the mean number of steps I took each day to compare average step count between weekdays. I believe I walk the most on Wednesdays, because I have classes to walk to but also free time to work out and go on walks as I do not have work, so I am curious if my data reflects this. 
 
+b. Visualization
+```{r personal data visualization}
+
+# load data
+my_data <- read_csv("~/Desktop/ENVS-193DS/ENVS-193DS_homework-03/data/193DS Data - Sheet1.csv")
+
+my_data$`Day of the Week` <- factor(my_data$`Day of the Week`,
+                                  levels = c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"))
+
+
+ggplot(data = my_data, # using the data frame my_data
+       aes(x = `Day of the Week`, # 2. naming the aesthetics: the x-axis should be the day of the week
+           y = Steps)) + # the y-axis should be step count
+  geom_boxplot(fill = "lightblue", color = "darkblue") + # 3. the plot should be a boxplot and changes the inside and outline color of the boxes
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "red") + # Add mean points
+  labs(x = "Day of the Week", # relabeling the x-axis
+       y = "Steps", # and the y-axis 
+       title = "Step Count Patterns Across the Week") # adding a title 
+```

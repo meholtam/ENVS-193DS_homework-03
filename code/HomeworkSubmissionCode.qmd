@@ -1,0 +1,32 @@
+---
+title: "Homework 3"
+format: html
+editor: visual
+date: "5/20/25"
+---
+
+Link to repository: <https://github.com/meholtam/ENVS-193DS_homework-03>
+
+```{r packages}
+#| warning: false
+
+library(tidyverse)
+library(ggplot2)
+library(here)
+library(gt)
+setwd("C:/Users/YourName/Documents/YourFolder")
+
+```
+
+Problem 1: Personal Data
+
+a.  Data summarizing
+
+    I am calculating the mean number of steps I took each day to compare average step count between weekdays. I believe I walk the most on Wednesdays, because I have classes to walk to but also free time to work out and go on walks as I do not have work, so I am curious if my data reflects this.
+
+b.  Visualization
+
+    ```{r personal visualization}
+    my_data <- read.csv("193DS Data - Sheet1.csv")
+
+    ```
