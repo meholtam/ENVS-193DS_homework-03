@@ -21,4 +21,4 @@ draft.jpg: completed draft of my affective visualization
 
 Link to rendered output:
 
-https://github.com/meholtam/ENVS-193DS_homework-03 
+[https://github.com/meholtam/ENVS-193DS_homework-03 ](https://meholtam.github.io/ENVS-193DS_homework-03/HomeworkSubmissionCode.html)
