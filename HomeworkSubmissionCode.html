@@ -371,7 +371,7 @@ curious if my data reflects this.</p></li>
 <li><p>Visualization</p></li>
 </ol>
 <pre class="r"><code># load data
-my_data &lt;- read_csv(&quot;~/Desktop/ENVS-193DS/ENVS-193DS_homework-03/data/193DS Data - Sheet1.csv&quot;)</code></pre>
+my_data &lt;- read_csv(&quot;~/Desktop/ENVS-193DS/ENVS-193DS_homework-03/data/193DS Data - Sheet1.csv&quot;) # reading in my data</code></pre>
 <pre><code>## Rows: 32 Columns: 7
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
@@ -382,7 +382,7 @@ my_data &lt;- read_csv(&quot;~/Desktop/ENVS-193DS/ENVS-193DS_homework-03/data/19
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <pre class="r"><code>my_data$`Day of the Week` &lt;- factor(my_data$`Day of the Week`,
-                                  levels = c(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;))
+                                  levels = c(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;)) # formating to list days of the week in order
 
 
 ggplot(data = my_data, # using the data frame my_data
@@ -412,35 +412,35 @@ mean number of steps for each day of the week.</p></li>
 visualized in part b.</p></li>
 </ol>
 <pre class="r"><code># Summarize the mean steps per day
-mean_table &lt;- my_data %&gt;%
-  group_by(`Day of the Week`) %&gt;%
+mean_table &lt;- my_data %&gt;% # setting data frame
+  group_by(`Day of the Week`) %&gt;% # grouping by day of week 
   summarise(Mean_Steps = mean(Steps, na.rm = TRUE)) %&gt;%
-  arrange(match(`Day of the Week`, c(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;)))
+  arrange(match(`Day of the Week`, c(&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;))) # making a summary of mean steps per day
 
 # Create a gt table
-mean_table %&gt;%
+mean_table %&gt;% # creating a gt table
   gt() %&gt;%
   fmt_number(
-    columns = Mean_Steps,
-    decimals = 0
+    columns = Mean_Steps, # setting the column 
+    decimals = 0 # setting the amount of digits after the decimal 
   ) %&gt;%
   tab_header(
-    title = &quot;Mean Steps Per Day of the Week&quot;
+    title = &quot;Mean Steps Per Day of the Week&quot; # setting the title 
   )</code></pre>
-<div id="ayinetxwos" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ayinetxwos table {
+<div id="kmjjyepoha" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kmjjyepoha table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#ayinetxwos thead, #ayinetxwos tbody, #ayinetxwos tfoot, #ayinetxwos tr, #ayinetxwos td, #ayinetxwos th {
+#kmjjyepoha thead, #kmjjyepoha tbody, #kmjjyepoha tfoot, #kmjjyepoha tr, #kmjjyepoha td, #kmjjyepoha th {
 border-style: none;
 }
-#ayinetxwos p {
+#kmjjyepoha p {
 margin: 0;
 padding: 0;
 }
-#ayinetxwos .gt_table {
+#kmjjyepoha .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -465,11 +465,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#ayinetxwos .gt_caption {
+#kmjjyepoha .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#ayinetxwos .gt_title {
+#kmjjyepoha .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -480,7 +480,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#ayinetxwos .gt_subtitle {
+#kmjjyepoha .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -491,7 +491,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#ayinetxwos .gt_heading {
+#kmjjyepoha .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -502,12 +502,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#ayinetxwos .gt_bottom_border {
+#kmjjyepoha .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#ayinetxwos .gt_col_headings {
+#kmjjyepoha .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -521,7 +521,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#ayinetxwos .gt_col_heading {
+#kmjjyepoha .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -540,7 +540,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#ayinetxwos .gt_column_spanner_outer {
+#kmjjyepoha .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -551,13 +551,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#ayinetxwos .gt_column_spanner_outer:first-child {
+#kmjjyepoha .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#ayinetxwos .gt_column_spanner_outer:last-child {
+#kmjjyepoha .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#ayinetxwos .gt_column_spanner {
+#kmjjyepoha .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -568,10 +568,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#ayinetxwos .gt_spanner_row {
+#kmjjyepoha .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#ayinetxwos .gt_group_heading {
+#kmjjyepoha .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -596,7 +596,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#ayinetxwos .gt_empty_group_heading {
+#kmjjyepoha .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -610,13 +610,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#ayinetxwos .gt_from_md > :first-child {
+#kmjjyepoha .gt_from_md > :first-child {
 margin-top: 0;
 }
-#ayinetxwos .gt_from_md > :last-child {
+#kmjjyepoha .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#ayinetxwos .gt_row {
+#kmjjyepoha .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -634,7 +634,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#ayinetxwos .gt_stub {
+#kmjjyepoha .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -646,7 +646,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ayinetxwos .gt_stub_row_group {
+#kmjjyepoha .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -659,13 +659,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#ayinetxwos .gt_row_group_first td {
+#kmjjyepoha .gt_row_group_first td {
 border-top-width: 2px;
 }
-#ayinetxwos .gt_row_group_first th {
+#kmjjyepoha .gt_row_group_first th {
 border-top-width: 2px;
 }
-#ayinetxwos .gt_summary_row {
+#kmjjyepoha .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -674,14 +674,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ayinetxwos .gt_first_summary_row {
+#kmjjyepoha .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#ayinetxwos .gt_first_summary_row.thick {
+#kmjjyepoha .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#ayinetxwos .gt_last_summary_row {
+#kmjjyepoha .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -690,7 +690,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#ayinetxwos .gt_grand_summary_row {
+#kmjjyepoha .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -699,7 +699,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ayinetxwos .gt_first_grand_summary_row {
+#kmjjyepoha .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -708,7 +708,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#ayinetxwos .gt_last_grand_summary_row_top {
+#kmjjyepoha .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -717,10 +717,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#ayinetxwos .gt_striped {
+#kmjjyepoha .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#ayinetxwos .gt_table_body {
+#kmjjyepoha .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -728,7 +728,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#ayinetxwos .gt_footnotes {
+#kmjjyepoha .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -741,7 +741,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#ayinetxwos .gt_footnote {
+#kmjjyepoha .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -749,7 +749,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ayinetxwos .gt_sourcenotes {
+#kmjjyepoha .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -762,64 +762,64 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#ayinetxwos .gt_sourcenote {
+#kmjjyepoha .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#ayinetxwos .gt_left {
+#kmjjyepoha .gt_left {
 text-align: left;
 }
-#ayinetxwos .gt_center {
+#kmjjyepoha .gt_center {
 text-align: center;
 }
-#ayinetxwos .gt_right {
+#kmjjyepoha .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#ayinetxwos .gt_font_normal {
+#kmjjyepoha .gt_font_normal {
 font-weight: normal;
 }
-#ayinetxwos .gt_font_bold {
+#kmjjyepoha .gt_font_bold {
 font-weight: bold;
 }
-#ayinetxwos .gt_font_italic {
+#kmjjyepoha .gt_font_italic {
 font-style: italic;
 }
-#ayinetxwos .gt_super {
+#kmjjyepoha .gt_super {
 font-size: 65%;
 }
-#ayinetxwos .gt_footnote_marks {
+#kmjjyepoha .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#ayinetxwos .gt_asterisk {
+#kmjjyepoha .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#ayinetxwos .gt_indent_1 {
+#kmjjyepoha .gt_indent_1 {
 text-indent: 5px;
 }
-#ayinetxwos .gt_indent_2 {
+#kmjjyepoha .gt_indent_2 {
 text-indent: 10px;
 }
-#ayinetxwos .gt_indent_3 {
+#kmjjyepoha .gt_indent_3 {
 text-indent: 15px;
 }
-#ayinetxwos .gt_indent_4 {
+#kmjjyepoha .gt_indent_4 {
 text-indent: 20px;
 }
-#ayinetxwos .gt_indent_5 {
+#kmjjyepoha .gt_indent_5 {
 text-indent: 25px;
 }
-#ayinetxwos .katex-display {
+#kmjjyepoha .katex-display {
 display: inline-flex !important;
 margin-bottom: 0.75em !important;
 }
-#ayinetxwos div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kmjjyepoha div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
 height: 0px !important;
 }
 </style>
