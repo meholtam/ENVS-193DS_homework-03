@@ -45,3 +45,26 @@ ggplot(data = my_data, # using the data frame my_data
 
 c. Caption
 The box plot shows the mean number of steps taken each week day. The data was collected from the start of April 2025 to the end of May 2025. The horizontal line inside each box represents the median amount of steps taken on that day of the week, while the box itself represents the interquartile range. The bottom of the box represents the 1st quartile, or the 25th percentile, while the top of the box represents the 3rd quartile, or the 75th percentile. The whiskers, or lines extending from the box, show the typical range of step count. The dots outside of the box represent outliers, or days in which step count was far outside of the average for that day. The red dot represents the mean number of steps for each day of the week. 
+
+d. Table Presentation
+# Create a table summarizing the same data visualized in part b. 
+
+```{r table presentation}
+
+# Summarize the mean steps per day
+mean_table <- my_data %>%
+  group_by(`Day of the Week`) %>%
+  summarise(Mean_Steps = mean(Steps, na.rm = TRUE)) %>%
+  arrange(match(`Day of the Week`, c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")))
+
+# Create a gt table
+mean_table %>%
+  gt() %>%
+  fmt_number(
+    columns = Mean_Steps,
+    decimals = 0
+  ) %>%
+  tab_header(
+    title = "Mean Steps Per Day of the Week"
+  )
+```
