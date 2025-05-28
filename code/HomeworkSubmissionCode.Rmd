@@ -96,4 +96,6 @@ b. Visual Clarity
 
 The figure I included in Part A clearly represents the statistics of the project clearly. The x and y-axis are included in a logical position. The y-axis represents the mean number of track incursions, which is a summary statistic in itself. However, there is not extra information included, such as standard error or model predictions, which would paint an even more full picture. 
 
+c. Aesthetic Clarity
 
+The authors handled visual clutter quite well in the figure included. The graph has a high data-ink ratio because almost all of the visual elements of the graph, including the line, labels, and axes, help to directly display the data. There are minimal additional elements such as unnecessary borders or coloring.
